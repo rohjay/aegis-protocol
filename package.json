@@ -1,0 +1,11 @@
+{
+  "name": "aegis-protocol",
+  "version": "1.0.0",
+  "description": "Aegis Protocol is a Tower Defense game with RPG elements and strategy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

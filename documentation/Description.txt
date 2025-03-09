@@ -1,0 +1,60 @@
+Space Station Defense
+
+Tower Types
+
+💥 Direct Damage – "Plasma Cannons"
+
+    Look: Sleek, rotating turrets with glowing energy cores.
+    Attack Method: Fires high-velocity plasma bolts or concentrated laser beams.
+    Upgrades: Higher energy output (damage), faster cooling systems (fire rate), extended barrel for precision shots (range).
+    Specialization Ideas:
+        Railgun Variant – Slower but fires devastating hypervelocity projectiles.
+        Arc Cannon – Sends electric bolts chaining between enemies.
+        Dual-Blaster Mode – Twin-barreled death, higher DPS but burns more energy.
+
+🌩 AOE (Area of Effect) – "Tesla Disruptors"
+
+    Look: A cluster of floating orbs generating arcs of energy.
+    Attack Method: Fires electromagnetic bursts or lightning waves that damage multiple enemies.
+    Upgrades: Wider shock radius, stronger EMP bursts (more damage), faster charge-up.
+    Specialization Ideas:
+        EMP Overload – Slows or disables robotic enemies.
+        Shockwave Generator – Releases pulses that knock enemies back.
+        Nano-Cloud Emitter – Deploys a swarm of nanobots that erode enemy armor.
+
+🛑 Debuff/Impedance – "Graviton Manipulators"
+
+    Look: Floating gravity wells or anchored energy pylons.
+    Attack Method: Distorts gravity to slow or pull enemies off course.
+    Upgrades: Stronger gravity fields, larger effect radius, longer duration.
+    Specialization Ideas:
+        Singularity Trap – Creates a temporary black hole, sucking enemies inward.
+        Repulsor Field – Pushes back enemies instead of slowing them.
+        Chrono Field – Temporarily stops time for enemies caught in its radius.
+
+Enemy Types
+
+🦑 Swarmers (Small) – "Skitter Drones"
+
+    Armor: None – They take full damage from all sources.
+    Resistances: Very susceptible to slows and crowd control.
+    Special Ability: "Swarm Instinct" – Moves slightly faster when near other Swarmers.
+    Key Weakness: Slows & AOE – They die fast, especially if caught in Tesla or Graviton fields.
+    ➡ Tactics: Slow ‘em down and watch ‘em drop.
+
+🦍 Brutes (Medium) – "Shock Troopers"
+
+    Armor: Light – Reduces a bit of damage but still vulnerable.
+    Resistances: Moderate resistance to slows & debuffs.
+    Special Ability: "Adaptive Shielding" – Gains temporary armor when below 50% HP.
+    Key Weakness: Consistent damage output – Don’t let them sustain for too long.
+    ➡ Tactics: Versatile enemy that requires a mix of AOE and single-target attacks.
+
+🛡 Juggernauts (Large) – "Dreadnought Behemoths"
+
+    Armor: Heavy – Takes reduced damage from most sources.
+    Resistances: Immune to slows, gravity wells, and stuns.
+    Special Ability: "Overcharged Reactor" – Explodes on death, dealing AOE damage to towers.
+    Key Weakness: Very slow movement – Needs heavy sustained fire to take down.
+    ➡ Tactics: Overwhelms defenses through sheer endurance—must be prioritized.
+

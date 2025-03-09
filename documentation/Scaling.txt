@@ -1,0 +1,9 @@
+Scaling Formulas
+    Swarmers: Base HP * (1.15 ^ Level) (15% HP increase per level – still fragile but scales)
+    Brutes: Base HP * (1.2 ^ Level) (20% HP increase per level – tougher but manageable)
+    Juggernauts: Base HP * (1.3 ^ Level) (30% HP increase per level – absolute tanks)
+    Armor: Flat across all levels
+        Swarmers: ❌ 0% DR
+        Brutes: 🛡 10% DR
+        Juggernauts: 🏰 25% DR
+    Currency Drop: (Base HP / 10) + (Level * 2)

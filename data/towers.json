@@ -1,0 +1,74 @@
+{
+  "towers": [
+    {
+      "name": "Plasma Cannon",
+      "type": "Direct Damage",
+      "damage": 25,
+      "range": 200,
+      "rate_of_fire": 1.5,
+      "specializations": {
+        "Plasma Overload": {
+          "effect": "Massive single-target damage increase",
+          "damage_multiplier": 2.0,
+          "rate_of_fire_multiplier": 0.8
+        },
+        "Explosive Shot": {
+          "effect": "Shots now deal splash damage",
+          "splash_radius": 50,
+          "damage_multiplier": 0.75
+        },
+        "Graviton Rounds": {
+          "effect": "Shots now apply a slowing effect",
+          "slow_effect": "30% movement reduction for 2s"
+        }
+      }
+    },
+    {
+      "name": "Tesla Disruptor",
+      "type": "AOE",
+      "damage": 10,
+      "range": 150,
+      "rate_of_fire": 1.0,
+      "specializations": {
+        "High Voltage": {
+          "effect": "Increased AOE damage",
+          "damage_multiplier": 1.5,
+          "chain_targets": 5
+        },
+        "Focused Lightning": {
+          "effect": "Turns into a single-target burst damage tower",
+          "damage_multiplier": 3.0,
+          "chain_targets": 1
+        },
+        "Electro-Gravitic Pulse": {
+          "effect": "Electrocutes enemies and slows them",
+          "slow_effect": "20% movement reduction for 3s"
+        }
+      }
+    },
+    {
+      "name": "Graviton Manipulator",
+      "type": "Debuff",
+      "damage": 0,
+      "range": 175,
+      "rate_of_fire": 2.0,
+      "specializations": {
+        "Event Horizon": {
+          "effect": "Increases slow effect significantly",
+          "slow_effect": "50% movement reduction for 4s"
+        },
+        "Singularity Collapse": {
+          "effect": "Now deals AOE damage over time",
+          "damage_per_second": 5,
+          "duration": 3
+        },
+        "Kinetic Railgun": {
+          "effect": "Now launches high-damage projectiles",
+          "damage": 40,
+          "rate_of_fire_multiplier": 1.5
+        }
+      }
+    }
+  ]
+}
+

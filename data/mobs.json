@@ -1,0 +1,35 @@
+{
+  "enemies": [
+    {
+      "name": "Swarmer",
+      "type": "Small",
+      "health": 50,
+      "speed": "Fast",
+      "armor": 0,
+      "damage_reduction": 0,
+      "resistances": [],
+      "currency_drop": 5
+    },
+    {
+      "name": "Brute",
+      "type": "Medium",
+      "health": 150,
+      "speed": "Medium",
+      "armor": 10,
+      "damage_reduction": 0.10,
+      "resistances": ["Moderate"],
+      "currency_drop": 15
+    },
+    {
+      "name": "Juggernaut",
+      "type": "Large",
+      "health": 300,
+      "speed": "Slow",
+      "armor": 25,
+      "damage_reduction": 0.25,
+      "resistances": ["High"],
+      "currency_drop": 30
+    }
+  ]
+}
+

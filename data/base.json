@@ -1,0 +1,23 @@
+{
+  "home_base": {
+    "shields": {
+      "level": 1,
+      "repair_points": 100,
+      "upgrade_cost": 100
+    },
+    "energy": {
+      "level": 1,
+      "rate_of_fire_bonus": 0.05,
+      "upgrade_cost": 100
+    },
+    "hit_points": {
+      "level": 1,
+      "tower_resistance_bonus": 0.02,
+      "upgrade_cost": 100
+    },
+    "scaling": {
+      "upgrade_multiplier": 1.3
+    }
+  }
+}
+
