@@ -1,0 +1,455 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #2c3e50;
+    color: white;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Game container */
+#game-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+/* Game board */
+#game-board {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    background-color: #1e2a38;
+    overflow: hidden;
+}
+
+#path {
+    position: absolute;
+    z-index: 2;
+}
+
+.path-segment {
+    position: absolute;
+    background-color: #34495e;
+    height: 60px;
+    transform-origin: center left;
+}
+
+.path-segment::before,
+.path-segment::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.path-segment::before {
+    left: -30px;
+    top: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid #34495e;
+}
+
+.path-segment::after {
+    right: -30px;
+    top: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid #34495e;
+}
+
+#home-base {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border: 2px solid #2980b9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.base-stats {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+/* Enemies and Towers */
+.enemy, .tower {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.enemy {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+}
+
+.enemy-swarmer {
+    width: 25px;
+    height: 25px;
+    background-color: #e74c3c;
+    border: 1px solid #c0392b;
+}
+
+.enemy-brute {
+    width: 40px;
+    height: 40px;
+    background-color: #e67e22;
+    border: 1px solid #d35400;
+}
+
+.enemy-juggernaut {
+    width: 60px;
+    height: 60px;
+    background-color: #9b59b6;
+    border: 1px solid #8e44ad;
+}
+
+.tower {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #2c3e50;
+    cursor: pointer;
+}
+
+.tower-plasma {
+    background-color: #f1c40f;
+}
+
+.tower-tesla {
+    background-color: #2ecc71;
+}
+
+.tower-graviton {
+    background-color: #3498db;
+}
+
+.tower-range {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Tower ghost for placement */
+.tower-ghost {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px dashed white;
+    pointer-events: none;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+}
+
+.tower-ghost.valid {
+    border-color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.3);
+}
+
+.tower-ghost.invalid {
+    border-color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.3);
+}
+
+/* Right panel */
+#right-panel {
+    width: 20%;
+    height: 100%;
+    background-color: #2c3e50;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#panel-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.panel-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Panel sections */
+.panel-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #34495e;
+}
+
+/* Tower selection */
+#tower-selection {
+    margin-bottom: 20px;
+}
+
+#tower-selection .tooltip {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tower-btn {
+    position: relative;
+    font-weight: bold;
+}
+
+.specialization-btn {
+    position: relative;
+    background-color: #3498db;
+    border-color: #2980b9;
+}
+
+.specialization-btn:hover {
+    background-color: #2980b9;
+}
+
+.upgrade-btn {
+    position: relative;
+    background-color: #27ae60;
+    border-color: #2ecc71;
+}
+
+.upgrade-btn:hover {
+    background-color: #2ecc71;
+}
+
+/* Game controls */
+#game-actions {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+}
+
+/* Info panels */
+#tower-info, #base-info {
+    margin-bottom: 20px;
+}
+
+#tower-stats, #base-stats {
+    margin-bottom: 15px;
+}
+
+#tower-upgrades, #base-upgrades {
+    margin-bottom: 15px;
+}
+
+.tower-attribute-upgrades {
+    margin-bottom: 15px;
+}
+
+#specialization-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#sell-tower {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+
+#restart-game {
+    background-color: #7f8c8d;
+    border-color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #34495e;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2c3e50;
+    pointer-events: none;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #34495e transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #3498db;
+}
+
+.tooltip-description {
+    margin-bottom: 5px;
+}
+
+.tooltip-effects {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Visual effects */
+.taking-damage {
+    animation: damage-pulse 0.3s ease-in-out;
+}
+
+.repairing {
+    animation: repair-pulse 1s ease-in-out;
+}
+
+.upgrading {
+    animation: upgrade-flash 0.5s ease-in-out;
+}
+
+.dying {
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-out;
+}
+
+.dot-effect {
+    box-shadow: 0 0 10px #9b59b6;
+}
+
+@keyframes damage-pulse {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(3); background-color: #e74c3c; }
+    100% { filter: brightness(1); }
+}
+
+@keyframes repair-pulse {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(2); background-color: #2ecc71; }
+    100% { filter: brightness(1); }
+}
+
+@keyframes upgrade-flash {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(2); background-color: #f1c40f; }
+    100% { filter: brightness(1); }
+}
+
+/* Game start overlay */
+#start-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#game-logo {
+    max-width: 60%;
+    max-height: 60%;
+    filter: drop-shadow(0 0 30px #3498db);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#start-overlay:hover #game-logo {
+    transform: scale(1.05);
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}

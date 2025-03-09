@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis Protocol - Tower Defense</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-board">
+            <div id="path"></div>
+            <div id="home-base" class="structure">
+                <div class="base-stats">
+                    <div>HP: <span id="base-hp">500</span></div>
+                    <div>Shields: <span id="base-shields">100</span></div>
+                    <div>Energy: <span id="base-energy">100</span></div>
+                </div>
+            </div>
+            <div id="enemies-container"></div>
+            <div id="towers-container"></div>
+            <div id="start-overlay">
+                <img src="assets/logo.webp" alt="Aegis Protocol Logo" id="game-logo">
+            </div>
+        </div>
+        
+        <div id="right-panel">
+            <div id="panel-header">
+                <h1 class="panel-title">Aegis Protocol</h1>
+                <div id="stats-container">
+                    <div class="stat">Credits: <span id="credits">100</span></div>
+                    <div class="stat">Wave: <span id="wave">1</span></div>
+                    <div class="stat">Lives: <span id="lives">10</span></div>
+                </div>
+            </div>
+            
+            <!-- Default panel content (when nothing is selected) -->
+            <div id="default-panel">
+                <div id="tower-selection" class="panel-section">
+                    <h3 class="section-title">Build Tower</h3>
+                    
+                    <div class="tooltip">
+                        <button class="tower-btn" data-tower="plasma">Plasma Cannon (50)</button>
+                        <div class="tooltip-text">
+                            <div class="tooltip-title">Plasma Cannon</div>
+                            <div class="tooltip-description">Powerful single-target tower</div>
+                            <div class="tooltip-effects">
+                                • High damage to single targets<br>
+                                • Medium range<br>
+                                • Fast attack speed<br>
+                                Cost: 50 credits
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tooltip">
+                        <button class="tower-btn" data-tower="tesla">Tesla Disruptor (75)</button>
+                        <div class="tooltip-text">
+                            <div class="tooltip-title">Tesla Disruptor</div>
+                            <div class="tooltip-description">Multi-target lightning tower</div>
+                            <div class="tooltip-effects">
+                                • Attacks up to 3 enemies at once<br>
+                                • Medium range<br>
+                                • Average attack speed<br>
+                                Cost: 75 credits
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tooltip">
+                        <button class="tower-btn" data-tower="graviton">Graviton Manipulator (100)</button>
+                        <div class="tooltip-text">
+                            <div class="tooltip-title">Graviton Manipulator</div>
+                            <div class="tooltip-description">Support tower that slows multiple enemies</div>
+                            <div class="tooltip-effects">
+                                • Slows up to 4 enemies by 30%<br>
+                                • Large area of effect<br>
+                                • No direct damage<br>
+                                Cost: 100 credits
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tower Info Panel (shown when a tower is selected) -->
+            <div id="tower-info" class="hidden">
+                <h3 class="section-title">Tower Info</h3>
+                <div id="tower-stats"></div>
+                <div id="tower-upgrades">
+                    <!-- Upgrades and specializations will be added here dynamically -->
+                </div>
+                <div class="tooltip">
+                    <button id="sell-tower">Sell Tower</button>
+                    <div class="tooltip-text">
+                        <div class="tooltip-title">Sell Tower</div>
+                        <div class="tooltip-description">Remove this tower and get some credits back</div>
+                        <div class="tooltip-effects" id="sell-tower-value"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Base Info Panel (shown when the base is selected) -->
+            <div id="base-info" class="hidden">
+                <h3 class="section-title">Base Info</h3>
+                <div id="base-stats"></div>
+                <div id="base-upgrades">
+                    <h4 class="section-title">Upgrades</h4>
+                    <button class="upgrade-btn" data-upgrade="shields">Upgrade Shields (100)</button>
+                    <button class="upgrade-btn" data-upgrade="energy">Upgrade Energy (100)</button>
+                    <button class="upgrade-btn" data-upgrade="hp">Upgrade HP (100)</button>
+                </div>
+            </div>
+            
+            <!-- Game action buttons at the bottom -->
+            <div id="game-actions" class="panel-section">
+                <button id="start-wave">Start Wave</button>
+                <button id="fast-forward" disabled>Fast Forward</button>
+                <button id="pause-game" disabled>Pause</button>
+                <button id="restart-game">Restart Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/main.js" type="module"></script>
+</body>
+</html>

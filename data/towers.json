@@ -37,7 +37,7 @@
         },
         "Focused Lightning": {
           "effect": "Turns into a single-target burst damage tower",
-          "damage_multiplier": 3.0,
+          "damage_multiplier": 3.5,
           "chain_targets": 1
         },
         "Electro-Gravitic Pulse": {
